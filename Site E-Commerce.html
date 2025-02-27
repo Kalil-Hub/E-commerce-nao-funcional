@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <style>
+   
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+   
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p3/6846172-fundo-realista-donuts-vetor.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    header {
+        background: rgb(230, 230, 8);
+        color: #000000;
+        padding: 1em 0;
+    }
+    
+    header .container {
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+    }
+
+    header .Nomeloja {
+        padding-right: 35px;
+    }
+
+    header h1 {
+        margin: 0;
+        color:black;
+    }
+    
+    header nav ul {
+        list-style: none;
+        display: flex;
+    }
+    
+    header nav ul li {
+        margin-left: 1em;
+    }
+    
+    header nav ul li a {
+        color: #000000;
+        text-decoration: none;
+        padding: 0.5em;
+    }
+    
+    header nav ul li a:hover {
+        background: rgb(104, 134, 21);
+        border-radius: 5px;
+    }
+    
+    header .search-form {
+        display: flex;
+        flex-grow: 2;
+        max-width: 1500px; /* Aumenta o tamanho máximo da barra de pesquisa */
+    }
+    
+    header .search-form input[type="text"] {
+        flex-grow: 1;
+        padding: 0.5em;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        background-color: #fff; 
+        font-size: 1.1em; 
+    }
+    
+    header .search-form button {
+        padding: 0.5em 1em;
+        border: none;
+        background: rgb(185, 185, 86);
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 1.1em; 
+    }
+    
+    header .search-form button:hover {
+        background: rgb(104, 134, 21);
+    }
+    
+    .nomeloja{
+        margin-left: 5px;
+    }
+
+
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+    
+    /* Produtos */
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-top: 1em;
+    }
+    
+    .product {
+        background: #84d31d;
+        border-radius: 5px;
+        padding: 1em;
+        flex: 1 1 calc(33.333% - 1em);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .product img {
+        max-width: 100%;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+    }
+    
+    .product h2 {
+        margin: 0.5em 0;
+        color: #000000;
+    }
+    
+    .product p {
+        color: #666;
+        font-size: 0.9em;
+        margin-bottom: 1em;
+    }
+    
+    .product button {
+        background: #000000;
+        color: #fff;
+        border: none;
+        padding: 0.7em 1.5em;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    .product button:hover {
+        background: #05bedf;
+    }
+    
+    /* Rodapé */
+    footer {
+        background: rgb(230, 230, 8);
+        color: #000000;
+        text-align: center;
+        padding: 1em 0;
+        margin-top: 2em;
+    }
+    
+    footer p {
+        margin: 0;
+    }
+    
+    .input-box {
+        width: 20%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    
+    .password-input {
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    
+    .submit-button {
+        width: 20%;
+        padding: 10px;
+        background-color: #000000;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .submit-button:hover {
+        background: #585656;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .container {
+            width: 95%;
+        }
+    
+        .products .product {
+            flex: 1 1 calc(50% - 1em);
+        }
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .container {
+            width: 100%;
+        }
+    
+        header .search-form {
+            max-width: none;
+        }
+    
+        header .search-form input[type="text"] {
+            width: 70%;
+        }
+    
+        header .search-form button {
+            width: 30%;
+        }
+    
+        .products .product {
+            flex: 1 1 calc(100% - 1em);
+        }
+    }
+    .corner-image {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 100px; 
+            z-index: 9999;
+    }
+    
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+             <h1 class="Nomeloja">Lojinha de Donuts</h1>
+            <form class="search-form">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit">Buscar</button>
+            </form>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Carrinho</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="products">
+                <article class="product">
+                    <img src="https://pm1.aminoapps.com/6791/d861086e311b553a0cd3d15bba709c2b76822564v2_hq.jpg" alt="Produto 1" width="500" height="350">
+                    <h2>Donuts Do Flash</h2>
+                    <h3>Preço: 1.50$</h3>
+                    <p>Treme na sua boca enquanto você come, Você vira precoce<br></p>
+                    <p>Sabor: Redberry com CreamCheese</p>
+                    <button>Comprar</button>
+                </article>
+                <article class="product">
+                    <img src="https://i.pinimg.com/originals/25/26/01/25260192267247a1dce1e193d371d68e.jpg" alt="Produto 1" width="500" height="350">
+                    <h2>Donuts Do Batman</h2>
+                    <h3>Preço: 33$</h3>
+                    <p>Batdonuts para ti e tua família, Você vira um morcego<br></p>
+                    <p>Sabor: Chocolate com Maracujá </p>
+                    <button>Comprar</button>
+                </article>
+                <article class="product">
+                    <img src="https://i.pinimg.com/236x/b7/d4/0a/b7d40afa9c8b61c81dffe0c096e3008c.jpg" alt="Produto 1" width="500" height="350">
+                    <h2>Donuts Do Aquaman</h2>
+                    <h3>Preço: 87$</h3>
+                    <p>Um donuts vindo diretamente de ATLANTIS, Você vira um peixe</p>
+                    <p>Sabor: Utilizando algas é um donuts vegano</p>
+                    <button>Comprar</button>
+                </article>
+                <article class="product">
+                    <img src="https://i.pinimg.com/236x/64/1e/ab/641eab43b5269e0a0fc13e1fb42484e7.jpg" alt="Produto 1" width="500" height="350">
+                    <h2>Donuts da Muié Maravia</h2>
+                    <h3>Preço: Inestimável$</h3>
+                    <p>Após comer esse donuts todos falarão a verdade durante 1 dia</p>
+                    <p>Sabor: Metade RedVelvet Metade Lean</p>
+                    <button>Comprar</button>
+                </article>
+                <article class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLGJG50spxRbOA-RHX4v8kDLjKZn1nW2WhZg&s" alt="Produto 1" width="500" height="350">
+                    <h2>Donuts do Super Homi</h2>
+                    <h3>Preço: Se comer é seu</h3>
+                    <p>Feito pelo próprio Super Homem (ps: inquebrável)</p>
+                    <p>Sabor: Masculino</p>
+                    <button>Comprar</button>
+                </article>
+                <article class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe_T4MI-68eupKLlmDBdpinURhQ_-XPqeiNQ&s" alt="Produto 1" width="500" height="350">
+                    <h2>Donuts do Snoopy</h2>
+                    <h3>Preço: ESNUPY$</h3>
+                    <p>ESNUPY</p>
+                    <P>Sabor: ESNUPYYYYY</P>
+                    <button>Comprar</button>
+                </article>
+                <article class="product">
+                    <img src="https://www.qsrmagazine.com/wp-content/uploads/2023/10/scoobydookrispykreme.jpg" alt="Produto 1" width="500" height="350">
+                    <h2>Donuts do Scooby</h2>
+                    <h3>Preço: 40$</h3>
+                    <p>Donuts do Scooby-DOO, Vire um monstro ou um Cachorro Sarnento</p>
+                    <p>Sabor: Biscoitos Scooby (Laranja, Chocolate)</p>
+                    <button>Comprar</button>
+                </article>
+                <article class="product">
+                    <img src="https://cloudfront-us-east-1.images.arcpublishing.com/estadao/E3ZNDU7LWJGL5DOJHDT4U3QUS4.jpeg" alt="Produto 1" width="500" height="350">
+                    <h2>Donuts do Halloween</h2>
+                    <h3>Preço: 13/22$</h3>
+                    <p>Doçuras ou travessuras? Um donuts que pode ser doce ou horroroso</p>
+                    <p>Sabor: ???</p>
+                    <button>Comprar</button>
+                </article>
+                <article class="product">
+                    <img src="https://64.media.tumblr.com/863060aa235c71dcdf2a01b5956c2c38/tumblr_ox17pzM2qc1tbbmjvo2_1280.jpg" alt="Produto 1" width="500" height="350">
+                    <h2>Donuts do Pokémon</h2>
+                    <h3>Preço: 150$</h3>
+                    <p>Escolha seu pokémon inicial e assim torne-se um verdadeiro treinador pokémon</p>
+                    <button>Comprar</button>
+                </article>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Loja De KaLeD3. Todos os direitos reservados.</p>
+            <form class="signup-form">
+                <input type="email" placeholder="Digite seu e-mail" class="input-box">
+                <div class="password-input">
+                    <input type="password" placeholder="Digite sua senha" class="input-box">
+                </div>
+                <button type="submit" class="submit-button">Cadastrar</button>
+            </form>
+        </div>
+    </footer>
+    <img src="https://carteirinha.iesb.br/static/media/logoiesbwhite.e526cc80.png" alt="Logo iesb" class="corner-image">
+</body>
+</html>
